@@ -4,7 +4,7 @@ go 1.21.5
 
 require (
 	github.com/google/uuid v1.5.0
-	github.com/ngdangkietse/ndk-go-proto v0.0.0-20231230101608-d8ccab35ca1b
+	github.com/ngdangkietse/ndk-go-proto v0.0.0-20240102023103-3ccb92a478d8
 	google.golang.org/grpc v1.60.0
 )
 

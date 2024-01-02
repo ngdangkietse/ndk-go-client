@@ -4,6 +4,7 @@ import (
 	"context"
 	"github.com/google/uuid"
 	"github.com/ngdangkietse/ndk-go-proto/generated/account"
+	"github.com/ngdangkietse/ndk-go-proto/generated/common"
 	"google.golang.org/grpc"
 	"log"
 	"time"
@@ -27,9 +28,14 @@ func main() {
 		Email:    "kiet.nguyen-dang@dev.com",
 	})
 
+	response2, err := client.FindUserByEmail(ctx, &common.PEmailRequest{
+		Email: "ngdangkiet@yopmail.com",
+	})
+
 	if err != nil {
 		log.Fatalf("Count not upsert user: %v", err)
 	}
 
-	log.Printf(response.Message)
+	log.Println(response.Message)
+	log.Println(response2.Data)
 }
